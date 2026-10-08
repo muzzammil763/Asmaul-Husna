@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,7 +10,22 @@ import 'src/ui/theme.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SettingsStore.instance.load();
+  _registerFontLicenses();
   runApp(const AsmaulHusnaApp());
+}
+
+/// The Open Font License travels with Google Sans and Boldonse; Flutter's
+/// licence page (Settings → Open-source licences) lists them.
+void _registerFontLicenses() {
+  for (final (font, file) in const [
+    ('Google Sans', 'GoogleSans-OFL.txt'),
+    ('Boldonse', 'Boldonse-OFL.txt'),
+  ]) {
+    LicenseRegistry.addLicense(() async* {
+      final text = await rootBundle.loadString('assets/licenses/$file');
+      yield LicenseEntryWithLineBreaks([font], text);
+    });
+  }
 }
 
 class AsmaulHusnaApp extends StatelessWidget {

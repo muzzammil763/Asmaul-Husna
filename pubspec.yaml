@@ -23,10 +23,14 @@ flutter:
   fonts:
     - family: Google Sans
       fonts:
-        - asset: assets/fonts/GoogleSans.ttf
+        - asset: assets/fonts/GoogleSans-Regular.ttf
+        - asset: assets/fonts/GoogleSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/GoogleSans-Bold.ttf
+          weight: 700
     - family: Boldonse
       fonts:
-        - asset: assets/fonts/Boldonse.ttf
+        - asset: assets/fonts/Boldonse-Regular.ttf
     - family: PDMS Saleem Quran
       fonts:
         - asset: assets/fonts/PDMSSaleemQuran.ttf
@@ -34,3 +38,5 @@ flutter:
       fonts:
         - asset: assets/fonts/JameelNooriNastaleeq.ttf
 
+  assets:
+    - assets/licenses/
