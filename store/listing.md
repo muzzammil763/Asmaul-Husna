@@ -3,7 +3,7 @@
 ## Privacy policy URL
 
 ```
-https://claude.ai/artifact/QiAYdUBYTD5M1vEYpXHcw5
+https://muzzammil763.github.io/Asmaul-Husna/privacy-policy/
 ```
 
 ## App name (max 30)
