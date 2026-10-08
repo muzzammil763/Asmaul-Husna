@@ -30,6 +30,18 @@ After changing any text in `lib/`, download the full fonts into
 The script lays out every Urdu string with HarfBuzz, keeps only the glyphs
 used, and checks the trimmed font lays them out identically.
 
+## App icon
+
+The icon is the `AppLogo` widget (`lib/src/ui/app_logo.dart`): "ٱللَّٰهُ" in
+PDMS Saleem Quran, gold on deep indigo, so it matches the app exactly. The same
+widget appears in Settings → About. To regenerate every icon after changing it:
+
+    tool/icon/make_icons.sh
+
+This renders the logo to `branding/` and writes the iOS icons plus Android's
+legacy, adaptive (background + foreground) and Android 13 themed icons.
+Needs ImageMagick.
+
 ## Release
 
     flutter build apk --release --split-per-abi
