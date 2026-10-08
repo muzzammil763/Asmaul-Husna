@@ -163,7 +163,6 @@ class _NamePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = context.palette;
     final s = SettingsStore.instance;
-    final medallion = context.r(250);
     return ListView(
       padding: EdgeInsets.fromLTRB(context.r(18), 8, context.r(18), 16),
       children: [
@@ -179,35 +178,21 @@ class _NamePage extends StatelessWidget {
             children: [
               Eyebrow('NAME ${name.number}', color: p.gold),
               SizedBox(height: context.r(10)),
-              SizedBox(
-                height: medallion,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    CustomPaint(
-                      painter: MedallionPainter(p.accent, p.surface),
-                      size: Size.square(medallion),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: context.r(18)),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    name.arabic,
+                    maxLines: 1,
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                      fontFamily: AppFonts.arabic,
+                      fontSize: context.r(84) * s.arabicScale,
+                      height: 1.5,
+                      color: p.title,
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: medallion * .18,
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          name.arabic,
-                          maxLines: 1,
-                          textDirection: TextDirection.rtl,
-                          style: TextStyle(
-                            fontFamily: AppFonts.arabic,
-                            fontSize: context.r(76) * s.arabicScale,
-                            height: 1.5,
-                            color: p.title,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
               SizedBox(height: context.r(12)),

@@ -317,45 +317,6 @@ class PatternCard extends StatelessWidget {
   }
 }
 
-/// Large eight-pointed medallion with a double outline, behind hero text.
-class MedallionPainter extends CustomPainter {
-  const MedallionPainter(this.color, this.fill);
-  final Color color;
-  final Color fill;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final c = size.center(Offset.zero);
-    final r = size.width / 2;
-    final star = starPath(c, r);
-    canvas.drawPath(
-      star,
-      Paint()
-        ..shader = RadialGradient(
-          colors: [Color.lerp(fill, color, .14)!, fill],
-        ).createShader(Offset.zero & size),
-    );
-    canvas.drawPath(
-      star,
-      Paint()
-        ..color = color.withValues(alpha: .7)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.4,
-    );
-    canvas.drawPath(
-      starPath(c, r * .86),
-      Paint()
-        ..color = color.withValues(alpha: .22)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant MedallionPainter old) =>
-      old.color != color || old.fill != fill;
-}
-
 /// Small rounded icon button used in screen headers.
 class HeaderButton extends StatelessWidget {
   const HeaderButton({

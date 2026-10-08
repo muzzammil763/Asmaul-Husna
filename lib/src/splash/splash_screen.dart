@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../ui/theme.dart';
 import '../ui/widgets.dart';
 
-/// Brief opening: the name of Allah inside a medallion, then fades to [next].
+/// Brief opening: the name of Allah, then fades to [next].
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key, required this.next});
   final Widget next;
@@ -71,25 +71,17 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    CustomPaint(
-                      painter: MedallionPainter(p.gold, p.surface),
-                      child: SizedBox.square(
-                        dimension: context.r(190),
-                        child: Center(
-                          child: Text(
-                            'ٱللَّٰهُ',
-                            textDirection: TextDirection.rtl,
-                            style: TextStyle(
-                              fontFamily: AppFonts.arabic,
-                              fontSize: context.r(76),
-                              height: 1.4,
-                              color: p.gold,
-                            ),
-                          ),
-                        ),
+                    Text(
+                      'ٱللَّٰهُ',
+                      textDirection: TextDirection.rtl,
+                      style: TextStyle(
+                        fontFamily: AppFonts.arabic,
+                        fontSize: context.r(110),
+                        height: 1.4,
+                        color: p.gold,
                       ),
                     ),
-                    SizedBox(height: context.r(36)),
+                    SizedBox(height: context.r(20)),
                     const EditorialTitle('Asmaul Husna', size: 26),
                     SizedBox(height: context.r(10)),
                     Eyebrow('THE 99 BEAUTIFUL NAMES', color: p.muted),
