@@ -1,7 +1,7 @@
 name: asmaul_husna
 description: "Asmaul Husna — the 99 beautiful names of Allah, fully offline."
 publish_to: 'none'
-version: 0.1.0+1
+version: 1.0.0+1
 
 environment:
   sdk: ^3.12.2
@@ -17,3 +17,18 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # Trimmed to the characters the app uses; see tool/subset_fonts.py.
+  fonts:
+    - family: Google Sans
+      fonts:
+        - asset: assets/fonts/GoogleSans.ttf
+    - family: Boldonse
+      fonts:
+        - asset: assets/fonts/Boldonse.ttf
+    - family: Amiri Quran
+      fonts:
+        - asset: assets/fonts/AmiriQuran.ttf
+    - family: Noto Nastaliq Urdu
+      fonts:
+        - asset: assets/fonts/NotoNastaliqUrdu.ttf
