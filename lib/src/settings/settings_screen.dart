@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../ui/theme.dart';
 import '../ui/widgets.dart';
@@ -190,11 +191,138 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: context.r(24)),
+                const Eyebrow('FONTS & CREDITS'),
+                const SizedBox(height: 10),
+                PatternCard(
+                  intensity: .4,
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Column(
+                    children: [
+                      for (final (i, credit) in _fontCredits.indexed) ...[
+                        if (i > 0)
+                          Divider(
+                            height: 1,
+                            indent: 16,
+                            endIndent: 16,
+                            color: p.border,
+                          ),
+                        _CreditRow(credit),
+                      ],
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Center(
+                  child: TextButton(
+                    onPressed: () => showLicensePage(
+                      context: context,
+                      applicationName: 'Asmaul Husna',
+                      applicationVersion: appVersion,
+                    ),
+                    child: const Text('Open-source licences'),
+                  ),
+                ),
               ],
             ),
           ),
         );
       },
+    );
+  }
+}
+
+typedef _FontCredit = ({
+  String font,
+  String usedFor,
+  String note,
+  String source,
+  String url,
+});
+
+const List<_FontCredit> _fontCredits = [
+  (
+    font: 'Jameel Noori Nastaleeq',
+    usedFor: 'Urdu',
+    note: 'Free of charge for Urdu lovers',
+    source: 'urdufonts.net',
+    url: 'https://urdufonts.net/fonts/jameel-noori-nastaleeq-regular',
+  ),
+  (
+    font: 'PDMS Saleem Quran',
+    usedFor: 'Arabic',
+    note: '© 2001 Pakistan Data Management Services',
+    source: 'urdunigaar.com',
+    url:
+        'https://urdunigaar.com/download/pdms-saleem-quran-font-ttf-file-download/',
+  ),
+  (
+    font: 'Google Sans',
+    usedFor: 'Text',
+    note: 'SIL Open Font License 1.1',
+    source: 'Google Fonts',
+    url: 'https://fonts.google.com/specimen/Google+Sans',
+  ),
+  (
+    font: 'Boldonse',
+    usedFor: 'Titles',
+    note: 'SIL Open Font License 1.1',
+    source: 'Google Fonts',
+    url: 'https://fonts.google.com/specimen/Boldonse',
+  ),
+];
+
+/// One font with its source. The app is offline, so tapping copies the link
+/// instead of opening it.
+class _CreditRow extends StatelessWidget {
+  const _CreditRow(this.credit);
+  final _FontCredit credit;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = context.palette;
+    return InkWell(
+      onTap: () {
+        Clipboard.setData(ClipboardData(text: credit.url));
+        showToast(context, 'Link to ${credit.source} copied');
+      },
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 12, 14, 12),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${credit.font} · ${credit.usedFor}',
+                    style: TextStyle(
+                      fontSize: 14.5,
+                      fontWeight: FontWeight.w600,
+                      color: p.title,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    credit.note,
+                    style: TextStyle(fontSize: 12.5, color: p.muted),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    'Source: ${credit.source}',
+                    style: TextStyle(
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w600,
+                      color: p.accent,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(Icons.link_rounded, size: 18, color: p.faint),
+          ],
+        ),
+      ),
     );
   }
 }
