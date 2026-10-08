@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../ui/app_logo.dart';
 import '../ui/theme.dart';
 import '../ui/widgets.dart';
 import 'settings_store.dart';
@@ -165,15 +166,36 @@ class SettingsScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Asmaul Husna',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: p.title,
-                        ),
+                      Row(
+                        children: [
+                          const AppLogo(size: 52, radius: 14),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Asmaul Husna',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: p.title,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  'Version $appVersion',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: p.muted,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 6),
+                      const SizedBox(height: 10),
                       Text(
                         'The 99 beautiful names of Allah with transliteration '
                         'and English and Urdu meanings. Works fully offline: '
@@ -183,11 +205,6 @@ class SettingsScreen extends StatelessWidget {
                           height: 1.5,
                           color: p.body,
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Version $appVersion',
-                        style: TextStyle(fontSize: 12, color: p.muted),
                       ),
                     ],
                   ),
