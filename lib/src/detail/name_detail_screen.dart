@@ -315,7 +315,7 @@ class _NavButton extends StatelessWidget {
             child: SizedBox(
               height: 48,
               child: Row(
-                mainAxisAlignment:  MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: trailingIcon
                     ? [
                         const SizedBox(width: 12),

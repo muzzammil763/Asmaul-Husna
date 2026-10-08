@@ -94,8 +94,7 @@ class _SplashScreenState extends State<SplashScreen>
                         strokeCap: StrokeCap.round,
                       ),
                     ),
-                                        SizedBox(height: context.r(32)),
-
+                    SizedBox(height: context.r(32)),
                   ],
                 ),
               ),
