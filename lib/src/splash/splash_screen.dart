@@ -71,20 +71,31 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    Spacer(),
                     Text(
                       'ٱللَّٰهُ',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                         fontFamily: AppFonts.arabic,
-                        fontSize: context.r(110),
-                        height: 1.4,
+                        fontSize: context.r(130),
                         color: p.gold,
                       ),
                     ),
-                    SizedBox(height: context.r(20)),
-                    const EditorialTitle('Asmaul Husna', size: 26),
-                    SizedBox(height: context.r(10)),
+                    const EditorialTitle('Asmaul Husna', size: 32),
+                    SizedBox(height: context.r(12)),
                     Eyebrow('THE 99 BEAUTIFUL NAMES', color: p.muted),
+                    Spacer(),
+                    SizedBox(
+                      height: 16,
+                      width: 16,
+                      child: CircularProgressIndicator(
+                        color: p.accent,
+                        strokeWidth: 2,
+                        strokeCap: StrokeCap.round,
+                      ),
+                    ),
+                                        SizedBox(height: context.r(32)),
+
                   ],
                 ),
               ),
