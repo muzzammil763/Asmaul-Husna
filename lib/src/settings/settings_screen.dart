@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,9 +23,9 @@ class SettingsScreen extends StatelessWidget {
             bottom: false,
             child: ListView(
               padding: EdgeInsets.fromLTRB(
-                context.r(18),
+                context.r(12),
                 context.r(8),
-                context.r(18),
+                context.r(12),
                 24 + MediaQuery.paddingOf(context).bottom,
               ),
               children: [
@@ -39,9 +40,9 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: context.r(16)),
                 const EditorialTitle('Your Settings', size: 26),
-                SizedBox(height: context.r(22)),
+                SizedBox(height: context.r(16)),
                 const Eyebrow('APPEARANCE'),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 Row(
                   children: [
                     for (final (mode, icon, label) in const [
@@ -53,7 +54,7 @@ class SettingsScreen extends StatelessWidget {
                       (ThemeMode.light, Icons.light_mode_rounded, 'Light'),
                       (ThemeMode.dark, Icons.dark_mode_rounded, 'Dark'),
                     ]) ...[
-                      if (mode != ThemeMode.system) const SizedBox(width: 10),
+                      if (mode != ThemeMode.system) const SizedBox(width: 8),
                       Expanded(
                         child: _ThemeOption(
                           icon: icon,
@@ -65,9 +66,9 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ],
                 ),
-                SizedBox(height: context.r(24)),
+                SizedBox(height: context.r(16)),
                 const Eyebrow('SHOW ON CARDS'),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 PatternCard(
                   intensity: .4,
                   padding: const EdgeInsets.symmetric(vertical: 4),
@@ -107,16 +108,16 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: context.r(24)),
+                SizedBox(height: context.r(16)),
                 const Eyebrow('ARABIC TEXT SIZE'),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 PatternCard(
-                  intensity: .4,
-                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  intensity: .5,
+                  padding: const EdgeInsets.fromLTRB(12, 12, 12, 8),
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 90,
+                        height: 70,
                         child: Center(
                           child: Text(
                             'ٱلرَّحْمَٰنُ',
@@ -154,13 +155,13 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: context.r(24)),
+                SizedBox(height: context.r(16)),
                 const Eyebrow('ABOUT'),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 PatternCard(
                   tint: p.gold,
-                  intensity: .8,
-                  padding: const EdgeInsets.all(16),
+                  intensity: 2,
+                  padding: const EdgeInsets.all(12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -183,7 +184,7 @@ class SettingsScreen extends StatelessWidget {
                           color: p.body,
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 8),
                       Text(
                         'Version $appVersion',
                         style: TextStyle(fontSize: 12, color: p.muted),
@@ -191,11 +192,11 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: context.r(24)),
+                SizedBox(height: context.r(16)),
                 const Eyebrow('FONTS & CREDITS'),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 PatternCard(
-                  intensity: .4,
+                  intensity: .5,
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Column(
                     children: [
@@ -212,7 +213,7 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 8),
                 Center(
                   child: TextButton(
                     onPressed: () => showLicensePage(
@@ -220,7 +221,7 @@ class SettingsScreen extends StatelessWidget {
                       applicationName: 'Asmaul Husna',
                       applicationVersion: appVersion,
                     ),
-                    child: const Text('Open-source licences'),
+                    child: const Text('Open Source Licences'),
                   ),
                 ),
               ],
@@ -345,7 +346,8 @@ class _ThemeOption extends StatelessWidget {
     final p = context.palette;
     return PatternCard(
       highlight: selected,
-      intensity: selected ? 1.6 : .3,
+      intensity: selected ? 2 : .5,
+      radius: 16,
       onTap: onTap,
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Column(
@@ -355,7 +357,7 @@ class _ThemeOption extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: FontWeight.w700,
               color: selected ? p.title : p.body,
             ),
@@ -416,7 +418,7 @@ class _SwitchRow extends StatelessWidget {
                 ],
               ),
             ),
-            Switch.adaptive(
+            CupertinoSwitch(
               value: value,
               activeTrackColor: p.accent,
               onChanged: onChanged,
