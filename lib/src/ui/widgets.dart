@@ -31,7 +31,7 @@ class EditorialTitle extends StatelessWidget {
       style: TextStyle(
         fontFamily: AppFonts.display,
         fontSize: context.r(size),
-        height: 1.32,
+        height: 1.5,
         letterSpacing: -.8,
         color: p.title,
       ),
@@ -338,7 +338,7 @@ class HeaderButton extends StatelessWidget {
     final button = Material(
       color: active ? p.accent.withValues(alpha: .16) : p.surface,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(32),
         side: BorderSide(color: active ? p.accent : p.border),
       ),
       clipBehavior: Clip.antiAlias,
