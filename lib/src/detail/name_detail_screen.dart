@@ -73,7 +73,7 @@ class _NameDetailScreenState extends State<NameDetailScreen> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(14, 8, 14, 4),
+                    padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
                     child: Row(
                       children: [
                         HeaderButton(
@@ -121,7 +121,7 @@ class _NameDetailScreenState extends State<NameDetailScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(18, 6, 18, 12),
+                    padding: const EdgeInsets.fromLTRB(12, 6, 12, 12),
                     child: Row(
                       children: [
                         _NavButton(
@@ -131,7 +131,7 @@ class _NameDetailScreenState extends State<NameDetailScreen> {
                               : null,
                           onTap: _index > 0 ? () => _go(-1) : null,
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 8),
                         _NavButton(
                           icon: Icons.chevron_right_rounded,
                           trailingIcon: true,
@@ -164,19 +164,19 @@ class _NamePage extends StatelessWidget {
     final p = context.palette;
     final s = SettingsStore.instance;
     return ListView(
-      padding: EdgeInsets.fromLTRB(context.r(18), 8, context.r(18), 16),
+      padding: EdgeInsets.fromLTRB(context.r(12), 8, context.r(12), 16),
       children: [
         PatternCard(
           highlight: true,
           intensity: 2,
-          radius: 24,
+          radius: 16,
           padding: EdgeInsets.symmetric(
-            horizontal: 18,
-            vertical: context.r(22),
+            horizontal: 12,
+            vertical: context.r(24),
           ),
           child: Column(
             children: [
-              Eyebrow('NAME ${name.number}', color: p.gold),
+              Eyebrow('NAME ${name.number}', color: p.accent),
               SizedBox(height: context.r(10)),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: context.r(18)),
@@ -188,8 +188,7 @@ class _NamePage extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontFamily: AppFonts.arabic,
-                      fontSize: context.r(84) * s.arabicScale,
-                      height: 1.5,
+                      fontSize: context.r(92) * s.arabicScale,
                       color: p.title,
                     ),
                   ),
@@ -227,7 +226,7 @@ class _NamePage extends StatelessWidget {
               textDirection: TextDirection.rtl,
               style: TextStyle(
                 fontFamily: AppFonts.urdu,
-                fontSize: context.r(28),
+                fontSize: context.r(32),
                 height: 1.7,
                 color: p.title,
               ),
@@ -240,7 +239,7 @@ class _NamePage extends StatelessWidget {
           tint: p.gold,
           child: Text(
             name.explanation,
-            style: TextStyle(fontSize: 15, height: 1.55, color: p.body),
+            style: TextStyle(fontSize: 16, height: 1.55, color: p.body),
           ),
         ),
       ],
@@ -316,9 +315,7 @@ class _NavButton extends StatelessWidget {
             child: SizedBox(
               height: 48,
               child: Row(
-                mainAxisAlignment: trailingIcon
-                    ? MainAxisAlignment.end
-                    : MainAxisAlignment.start,
+                mainAxisAlignment:  MainAxisAlignment.center,
                 children: trailingIcon
                     ? [
                         const SizedBox(width: 12),
