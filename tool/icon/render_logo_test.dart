@@ -50,7 +50,9 @@ void main() {
             key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
         final image = await boundary.toImage();
         final png = await image.toByteData(format: ui.ImageByteFormat.png);
-        File('branding/$file').writeAsBytesSync(png!.buffer.asUint8List());
+        File('branding/$file')
+          ..createSync(recursive: true)
+          ..writeAsBytesSync(png!.buffer.asUint8List());
       });
     });
   }

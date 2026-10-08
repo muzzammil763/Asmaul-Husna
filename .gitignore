@@ -46,3 +46,6 @@ app.*.map.json
 
 # Full source fonts; download them as described in tool/fonts_src/README.md
 /tool/fonts_src/*.ttf
+
+# Icon renders from tool/icon/make_icons.sh
+/branding/
