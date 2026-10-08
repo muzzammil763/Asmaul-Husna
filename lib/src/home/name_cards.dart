@@ -105,7 +105,7 @@ class NameListCard extends StatelessWidget {
     return PatternCard(
       onTap: onTap,
       intensity: favourite ? 1.4 : .7,
-      padding: const EdgeInsets.fromLTRB(12, 12, 16, 12),
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
       child: Row(
         children: [
           StarBadge(label: '${name.number}', size: 36),
@@ -123,7 +123,7 @@ class NameListCard extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 16,
                             fontWeight: FontWeight.w700,
                             color: p.accent,
                           ),
@@ -140,7 +140,7 @@ class NameListCard extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 2),
                     child: Text(
                       name.english,
-                      style: TextStyle(fontSize: 13, color: p.body),
+                      style: TextStyle(fontSize: 14, color: p.body),
                     ),
                   ),
                 if (s.showUrdu)
@@ -149,7 +149,7 @@ class NameListCard extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontFamily: AppFonts.urdu,
-                      fontSize: 19,
+                      fontSize: 20,
                       height: 1.5,
                       color: p.muted,
                     ),

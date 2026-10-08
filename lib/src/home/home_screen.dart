@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _build(BuildContext context, SettingsStore s) {
     final list = _visible(s);
-    final side = context.r(18);
+    final side = context.r(12);
     return Scaffold(
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -96,11 +96,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: context.r(10)),
+                    SizedBox(height: context.r(8)),
                     const EditorialTitle('Asmaul\nHusna', size: 30),
-                    SizedBox(height: context.r(18)),
+                    SizedBox(height: context.r(12)),
                     const _VerseCard(),
-                    SizedBox(height: context.r(18)),
+                    SizedBox(height: context.r(12)),
                     _SearchField(
                       controller: _search,
                       onChanged: (v) => setState(() => _query = v),
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: context.r(14)),
+                    SizedBox(height: context.r(12)),
                   ],
                 ),
               ),
@@ -146,9 +146,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ? SliverGrid.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                          mainAxisExtent: context.r(176),
+                          mainAxisSpacing: 8,
+                          crossAxisSpacing: 8,
+                          mainAxisExtent: context.r(172),
                         ),
                         itemCount: list.length,
                         itemBuilder: (_, i) => NameGridCard(
@@ -158,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     : SliverList.separated(
                         itemCount: list.length,
-                        separatorBuilder: (_, _) => const SizedBox(height: 10),
+                        separatorBuilder: (_, _) => const SizedBox(height: 8),
                         itemBuilder: (_, i) => NameListCard(
                           name: list[i],
                           onTap: () => _open(list, i),
@@ -190,8 +190,8 @@ class _VerseCard extends StatelessWidget {
     final s = SettingsStore.instance;
     return PatternCard(
       tint: p.gold,
-      intensity: 1.4,
-      radius: 22,
+      intensity: 2,
+      radius: 16,
       padding: EdgeInsets.fromLTRB(18, context.r(14), 18, context.r(16)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -202,8 +202,9 @@ class _VerseCard extends StatelessWidget {
             textDirection: TextDirection.rtl,
             style: TextStyle(
               fontFamily: AppFonts.arabic,
-              fontSize: context.r(31),
-              height: 1.7,
+              fontSize: context.r(36),
+              fontWeight: FontWeight.bold,
+              height: 1.5,
               wordSpacing: 6,
               color: p.gold,
             ),
@@ -215,7 +216,7 @@ class _VerseCard extends StatelessWidget {
               textDirection: TextDirection.rtl,
               style: TextStyle(
                 fontFamily: AppFonts.urdu,
-                fontSize: context.r(19),
+                fontSize: context.r(24),
                 height: 1.6,
                 color: p.body,
               ),
@@ -225,7 +226,7 @@ class _VerseCard extends StatelessWidget {
             Text(
               'To Allah belong the most beautiful names, so call upon Him by them.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: context.r(13), color: p.body),
+              style: TextStyle(fontSize: context.r(14), color: p.body),
             ),
           ],
           const SizedBox(height: 6),
@@ -233,7 +234,7 @@ class _VerseCard extends StatelessWidget {
             "AL-A'RAF 7:180",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: FontWeight.w800,
               letterSpacing: 1.4,
               color: p.muted,
@@ -264,7 +265,7 @@ class _SearchField extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const SizedBox(width: 14),
+            const SizedBox(width: 12),
             Icon(Icons.search_rounded, size: 20, color: p.muted),
             const SizedBox(width: 10),
             Expanded(
@@ -356,15 +357,15 @@ class _EmptyState extends StatelessWidget {
   Widget build(BuildContext context) {
     final p = context.palette;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(32, 24, 32, 48),
+      padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             favourites
                 ? Icons.favorite_border_rounded
                 : Icons.search_off_rounded,
-            size: 36,
+            size: 32,
             color: p.faint,
           ),
           const SizedBox(height: 12),
