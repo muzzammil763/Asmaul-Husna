@@ -8,16 +8,27 @@ network permission, no analytics.
 - Themes: System, Light, Dark (royal indigo + gold)
 - Content: `lib/src/data/names.dart`
 
-## Fonts
+## Fonts & credits
 
-`assets/fonts/` holds fonts trimmed to the characters the app uses. After
-changing any text in `lib/`, regenerate them from the full fonts in
-`tool/fonts_src/`:
+| Font | Used for | Source | Licence |
+|---|---|---|---|
+| Jameel Noori Nastaleeq | Urdu | [urdufonts.net](https://urdufonts.net/fonts/jameel-noori-nastaleeq-regular) | Free of charge for Urdu lovers |
+| PDMS Saleem Quran | Arabic | [urdunigaar.com](https://urdunigaar.com/download/pdms-saleem-quran-font-ttf-file-download/) | © 2001 Pakistan Data Management Services |
+| Google Sans | Text | [Google Fonts](https://fonts.google.com/specimen/Google+Sans) | SIL OFL 1.1 |
+| Boldonse | Titles | [Google Fonts](https://fonts.google.com/specimen/Boldonse) | SIL OFL 1.1 |
 
-    pip install fonttools
+The same credits appear in the app under Settings → Fonts & credits.
+
+`assets/fonts/` holds copies trimmed to exactly what the app draws (about
+350 KB in total; Jameel Noori Nastaleeq alone goes from 10.5 MB to 75 KB).
+After changing any text in `lib/`, download the full fonts into
+`tool/fonts_src/` (see its README) and regenerate:
+
+    pip install fonttools uharfbuzz
     python3 tool/subset_fonts.py
 
-Characters missing from a trimmed font fall back to the system font.
+The script lays out every Urdu string with HarfBuzz, keeps only the glyphs
+used, and checks the trimmed font lays them out identically.
 
 ## Release
 
