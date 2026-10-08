@@ -81,8 +81,8 @@ class _SplashScreenState extends State<SplashScreen>
                             textDirection: TextDirection.rtl,
                             style: TextStyle(
                               fontFamily: AppFonts.arabic,
-                              fontSize: context.r(54),
-                              height: 1.6,
+                              fontSize: context.r(76),
+                              height: 1.4,
                               color: p.gold,
                             ),
                           ),

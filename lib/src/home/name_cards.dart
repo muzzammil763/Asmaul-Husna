@@ -42,8 +42,8 @@ class NameGridCard extends StatelessWidget {
                   textDirection: TextDirection.rtl,
                   style: TextStyle(
                     fontFamily: AppFonts.arabic,
-                    fontSize: context.r(30) * s.arabicScale,
-                    height: 1.9,
+                    fontSize: context.r(42) * s.arabicScale,
+                    height: 1.5,
                     color: p.title,
                   ),
                 ),
@@ -80,8 +80,8 @@ class NameGridCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontFamily: AppFonts.urdu,
-                fontSize: context.r(12),
-                height: 1.9,
+                fontSize: context.r(18),
+                height: 1.5,
                 color: p.muted,
               ),
             ),
@@ -149,8 +149,8 @@ class NameListCard extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontFamily: AppFonts.urdu,
-                      fontSize: 12.5,
-                      height: 2,
+                      fontSize: 19,
+                      height: 1.5,
                       color: p.muted,
                     ),
                   ),
@@ -169,8 +169,8 @@ class NameListCard extends StatelessWidget {
                 textDirection: TextDirection.rtl,
                 style: TextStyle(
                   fontFamily: AppFonts.arabic,
-                  fontSize: 26 * s.arabicScale,
-                  height: 1.9,
+                  fontSize: 36 * s.arabicScale,
+                  height: 1.5,
                   color: p.title,
                 ),
               ),

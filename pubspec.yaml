@@ -19,7 +19,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Trimmed to the characters the app uses; see tool/subset_fonts.py.
+  # Trimmed to what the app draws; see tool/subset_fonts.py.
   fonts:
     - family: Google Sans
       fonts:
@@ -27,9 +27,10 @@ flutter:
     - family: Boldonse
       fonts:
         - asset: assets/fonts/Boldonse.ttf
-    - family: Amiri Quran
+    - family: PDMS Saleem Quran
       fonts:
-        - asset: assets/fonts/AmiriQuran.ttf
-    - family: Noto Nastaliq Urdu
+        - asset: assets/fonts/PDMSSaleemQuran.ttf
+    - family: Jameel Noori Nastaleeq
       fonts:
-        - asset: assets/fonts/NotoNastaliqUrdu.ttf
+        - asset: assets/fonts/JameelNooriNastaleeq.ttf
+

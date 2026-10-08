@@ -107,8 +107,8 @@ class AppPalette extends ThemeExtension<AppPalette> {
 abstract final class AppFonts {
   static const sans = 'Google Sans';
   static const display = 'Boldonse';
-  static const arabic = 'Amiri Quran';
-  static const urdu = 'Noto Nastaliq Urdu';
+  static const arabic = 'PDMS Saleem Quran';
+  static const urdu = 'Jameel Noori Nastaleeq';
 }
 
 ThemeData buildTheme(Brightness brightness) {

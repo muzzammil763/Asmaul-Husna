@@ -202,8 +202,9 @@ class _VerseCard extends StatelessWidget {
             textDirection: TextDirection.rtl,
             style: TextStyle(
               fontFamily: AppFonts.arabic,
-              fontSize: context.r(23),
-              height: 2,
+              fontSize: context.r(31),
+              height: 1.7,
+              wordSpacing: 6,
               color: p.gold,
             ),
           ),
@@ -214,8 +215,8 @@ class _VerseCard extends StatelessWidget {
               textDirection: TextDirection.rtl,
               style: TextStyle(
                 fontFamily: AppFonts.urdu,
-                fontSize: context.r(12.5),
-                height: 2.1,
+                fontSize: context.r(19),
+                height: 1.6,
                 color: p.body,
               ),
             ),

@@ -200,8 +200,8 @@ class _NamePage extends StatelessWidget {
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
                             fontFamily: AppFonts.arabic,
-                            fontSize: context.r(54) * s.arabicScale,
-                            height: 1.8,
+                            fontSize: context.r(76) * s.arabicScale,
+                            height: 1.5,
                             color: p.title,
                           ),
                         ),
@@ -242,8 +242,8 @@ class _NamePage extends StatelessWidget {
               textDirection: TextDirection.rtl,
               style: TextStyle(
                 fontFamily: AppFonts.urdu,
-                fontSize: context.r(19),
-                height: 2.2,
+                fontSize: context.r(28),
+                height: 1.7,
                 color: p.title,
               ),
             ),

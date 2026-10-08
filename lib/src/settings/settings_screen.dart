@@ -122,8 +122,8 @@ class SettingsScreen extends StatelessWidget {
                             textDirection: TextDirection.rtl,
                             style: TextStyle(
                               fontFamily: AppFonts.arabic,
-                              fontSize: 30 * s.arabicScale,
-                              height: 1.8,
+                              fontSize: 42 * s.arabicScale,
+                              height: 1.5,
                               color: p.title,
                             ),
                           ),
@@ -279,8 +279,8 @@ class _SwitchRow extends StatelessWidget {
                     style: urduSubtitle
                         ? TextStyle(
                             fontFamily: AppFonts.urdu,
-                            fontSize: 12,
-                            height: 1.9,
+                            fontSize: 18,
+                            height: 1.5,
                             color: p.muted,
                           )
                         : TextStyle(fontSize: 12.5, color: p.muted),
