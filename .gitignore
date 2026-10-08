@@ -43,3 +43,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Full source fonts; download them as described in tool/fonts_src/README.md
+/tool/fonts_src/*.ttf
